@@ -1,0 +1,65 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  th:replace="based::layout(~{::section})">
+<body>
+<section>
+<div class="container">
+<div class="row">
+<div class="col-md-8 offset-md-2">
+
+<div class="my-card mt-1">
+
+<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-danger" role="alert">
+ <p th:text="${session.message.content}"></p>
+ <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+</div>
+
+<div class="container text-center">
+<img alt="" style="width:80px;" src="" th:src="@{/img/membership.png}">
+</div>
+<h1 class="text-center">Register Here !!</h1>
+<form novalidate action="" th:action="@{/do_register}" method="post" th:object="${user}">
+
+<div class="form-group">
+    <label >Name</label>
+    <input type="text" class="form-control"
+   
+id="name" aria-describedby="emailHelp" name="name"
+ required="required" th:value="${user.name}"/>
+
+ 
+<div class="form-group">
+    <label >Your Email</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" 
+    name="email" required="required" th:value="${user.email}">
+
+  </div>
+  
+  <div class="form-group">
+    <label >Your Password</label>
+    <input type="text" class="form-control" id="password" aria-describedby="emailHelp" name="password" required="required">
+
+  </div>
+  
+   <div class="form-group">
+    
+   <textarea placeholder="enter something yoursself" name="about" rows="10" cols="" class="form-control" th:value="${user.about}" ></textarea>
+  </div>
+  
+  <div class="form-group text-center">
+  <input type="checkbox"   name="agreement" id="agreement"/>
+  <label>Accept term and condition</label>
+  </div>
+  
+  <div class="container text-center">
+  <button type="submit" class="btn bg-primary text-white">Submit</button>
+    <button type="reset" class="btn btn-warning  text-white">Reset</button>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</body>
+</html>

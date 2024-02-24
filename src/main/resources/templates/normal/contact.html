@@ -1,0 +1,96 @@
+
+
+
+
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"  th:replace="normal/based::layout(~{::section})">
+
+<body>
+<section>
+<div class="card">
+<div class="card-body">
+<h1 class="text-center">Add Contact</h1>
+
+<div class="container-fluid mt-1">
+<div class="row">
+<div class="col-md-10 offset-md-1">
+<form action="#"
+th:object="${contact}"
+enctype="multipart/form-data"
+method="POST"
+th:action="@{/user/process-contact}"
+class="mt-2"
+>
+<div class="input-group">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+<i class="fa fa-plus"></i>
+</div>
+</div>
+<input type="text" id="firstname" name="name" placeholder="enter first name" class="form-cotrol">
+</div>
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+<i class="fas fa-user-alt"></i>
+</div>
+</div>
+<input type="text" id="secondname" name="secondName" placeholder="enter aletrnative name" class="form-cotrol">
+</div>
+
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+<i class="fa fa-briefcase"></i>
+</div>
+</div>
+<input type="text" id="work" name="work" placeholder="enter yours work" class="form-cotrol">
+</div>
+
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+@
+</div>
+</div>
+<input type="email" id="email" name="email" placeholder="enter email" class="form-cotrol">
+</div>
+
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text mr-3">
+<i class="fa fa-phone"></i>
+</div>
+</div>
+<input type="number" id="email" name="phone" placeholder="enter phone number" class="form-cotrol">
+</div>
+
+<div class="input-group mt-3">
+
+<textarea id="description" name="description" cols="30" rows="10"class="form-cotrol" placeholder="enter description"></textarea>
+</div>
+
+
+
+
+
+
+
+<div class="custome-file mt-3">
+<input type="file" name="image"/>
+</div>
+
+<div class="container text-center">
+<button class="btn btn-outline-primary">Save Contact</button>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+</body>
+</html>
